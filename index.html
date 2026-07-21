@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ShopHub — Everything Store</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  
+  <div class="top-bar">Free delivery on orders over $35 · Ships from ShopHub Fulfillment</div>
+
+  
+  <header class="header">
+    <div class="header-left">
+      <a href="#" class="logo">Shop<span>Hub</span></a>
+      <button class="deliver-to">
+        <span class="pin">📍</span>
+        <div>
+          <div class="deliver-line1">Deliver to</div>
+          <div class="deliver-line2">Sandip University 422213</div>
+        </div>
+      </button>
+    </div>
+
+    <div class="header-search">
+      <select id="categorySelect">
+        <option value="all">All</option>
+        <option value="electronics">Electronics</option>
+        <option value="fashion">Fashion</option>
+        <option value="home">Home & Kitchen</option>
+        <option value="books">Books</option>
+        <option value="sports">Sports</option>
+      </select>
+      <input type="text" id="searchInput" placeholder="Search ShopHub..." />
+      <button id="searchBtn" aria-label="Search">🔍</button>
+    </div>
+
+    <div class="header-right">
+      <button class="header-btn" id="accountBtn">
+        <div class="line1">Hello, Sign in</div>
+        <div class="line2">Account &amp; Lists ▾</div>
+      </button>
+      <button class="header-btn" id="ordersBtn">
+        <div class="line1">Returns</div>
+        <div class="line2">&amp; Orders</div>
+      </button>
+      <button class="header-btn cart-btn" id="cartBtn">
+        <span class="cart-icon">🛒</span>
+        <span class="cart-count" id="cartCount">0</span>
+        <span class="line2">Cart</span>
+      </button>
+    </div>
+  </header>
+
+  
+  <nav class="subnav">
+    <button class="hamburger" id="hamburgerBtn">☰ All</button>
+    <button class="nav-link" data-category="electronics">Electronics</button>
+    <button class="nav-link" data-category="fashion">Fashion</button>
+    <button class="nav-link" data-category="home">Home &amp; Kitchen</button>
+    <button class="nav-link" data-category="books">Books</button>
+    <button class="nav-link" data-category="sports">Sports</button>
+    <button class="nav-link deals" data-category="deals">Today's Deals</button>
+    <button class="nav-link" data-category="all">Best Sellers</button>
+  </nav>
+
+ 
+  <section class="hero">
+    <img src="https://images.unsplash.com/photo-1557821552-17105176677c?w=1500&q=80" alt="" class="hero-img" />
+    <div class="hero-caption">Big deals on everyday essentials</div>
+  </section>
+
+  <main class="main">
+    
+    <section class="tiles">
+      <div class="tile">
+        <h3>Refresh your space</h3>
+        <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=400&q=80" alt="Home decor" />
+        <a href="#" class="tile-link" data-category="home">Shop Home &amp; Kitchen</a>
+      </div>
+      <div class="tile">
+        <h3>Level up your tech</h3>
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80" alt="Electronics" />
+        <a href="#" class="tile-link" data-category="electronics">Shop Electronics</a>
+      </div>
+      <div class="tile">
+        <h3>New season styles</h3>
+        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=400&q=80" alt="Fashion" />
+        <a href="#" class="tile-link" data-category="fashion">Shop Fashion</a>
+      </div>
+      <div class="tile">
+        <h3>Get moving</h3>
+        <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?w=400&q=80" alt="Sports" />
+        <a href="#" class="tile-link" data-category="sports">Shop Sports</a>
+      </div>
+    </section>
+
+    
+    <section class="products-section">
+      <div class="products-header">
+        <h2 id="resultsTitle">All products</h2>
+        <span id="resultsCount"></span>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <button class="back-to-top" id="backToTop">Back to top</button>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h4>Get to Know Us</h4>
+        <a href="#">About ShopHub</a>
+        <a href="#">Careers</a>
+        <a href="#">Press Releases</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect with Us</h4>
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+        <a href="#">Instagram</a>
+      </div>
+      <div class="footer-col">
+        <h4>Make Money with Us</h4>
+        <a href="#">Sell on ShopHub</a>
+        <a href="#">Become an Affiliate</a>
+        <a href="#">Advertise Your Products</a>
+      </div>
+      <div class="footer-col">
+        <h4>Let Us Help You</h4>
+        <a href="#">Your Account</a>
+        <a href="#">Returns Centre</a>
+        <a href="#">Help</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 ShopHub Clone — built for learning purposes, not affiliated with Amazon.</div>
+  </footer>
+
+  
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <h2>Your Cart</h2>
+      <button id="closeCart" aria-label="Close cart">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-subtotal">Subtotal: <span id="cartSubtotal">$0.00</span></div>
+      <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+    </div>
+  </aside>
+
+ 
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
